@@ -44,15 +44,14 @@ Array.from(forms).forEach(form => {
 const area_mensagem = document.getElementById('area-mensagem')
 
 function fnGerarMensagem(tipo, mensagemAlert) {
-
     const mensagem = `
         <div class="alert alert-${tipo}" role="alert">
             ${mensagemAlert}
         </div>
     `
-
     area_mensagem.innerHTML += mensagem
 }
+
 const params = new URLSearchParams(window.location.search);
 const sucesso = params.get('sucesso');
 
