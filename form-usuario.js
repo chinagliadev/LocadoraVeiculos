@@ -1,8 +1,12 @@
+$('document').ready(()=>{
+    $('#telefone').mask('(00) 00000-0000')
+})
+
 const forms = document.querySelectorAll('.needs-validation')
 
 Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
-        event.preventDefault()  // sempre impedir reload
+        event.preventDefault()  
         event.stopPropagation()
 
         if (!form.checkValidity()) {
@@ -13,8 +17,8 @@ Array.from(forms).forEach(form => {
         const usuario = {
             login: document.getElementById('email').value,
             senha: document.getElementById('senha').value,
-            nivel_acesso: "Operador",
-            telefone: document.getElementById('telefone').value,
+            nivel_acesso: "Admin",
+            telefone: $('#telefone').cleanVal(),
             endereco: document.getElementById('endereco').value
         }
 
